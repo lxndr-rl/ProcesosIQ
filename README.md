@@ -43,7 +43,7 @@ El servidor está listo para iniciarse.
 python3 .\manage.py runserver
 ```
 
-### [Endpoints](https://github.com/lxndr-rl/ProcesosIQ//blob/main/backend/README.md)
+### [Endpoints](https://github.com/lxndr-rl/ProcesosIQ/blob/master/backend/README.md)
 
 ### React
 
