@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import "../css/App.css";
@@ -144,7 +145,7 @@ const App = () => {
                 return (
                   <span>
                     <a
-                      href="/#"
+                      href="#"
                       onClick={() => {
                         setTypeModal("edit");
                         setIdPersona(rowData.id);
@@ -155,7 +156,7 @@ const App = () => {
                       Editar{" "}
                     </a>{" "}
                     |{" "}
-                    <a href="/#" onClick={() => borrarPersona(rowData.id)}>
+                    <a href="#" onClick={() => borrarPersona(rowData.id)}>
                       {" "}
                       Borrar{" "}
                     </a>
