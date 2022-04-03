@@ -36,6 +36,10 @@ const EditarPersona = ({ id, closeModal, type }) => {
             toaster.push(message("error", res.message), "bottomCenter");
           }
           setLoading(false);
+        })
+        .catch((erro) => {
+          setLoading(false);
+          toaster.push(message("error", erro.message), "bottomCenter");
         });
     }
   }, [id, type]);
@@ -58,6 +62,10 @@ const EditarPersona = ({ id, closeModal, type }) => {
             toaster.push(message("error", res.message), "bottomCenter");
           }
           setSaving(false);
+        })
+        .catch((erro) => {
+          setLoading(false);
+          toaster.push(message("error", erro.message), "bottomCenter");
         });
     } else {
       toaster.push(

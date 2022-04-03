@@ -14,6 +14,9 @@ import IconButton from "rsuite/IconButton";
 import { baseURL } from "../util";
 import AddOutlineIcon from "@rsuite/icons/AddOutline";
 
+const width =
+  window.innerWidth < 800 ? window.innerWidth : window.innerWidth / 2.2;
+
 const App = () => {
   const [showTimeLine, setShowTimeLine] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -44,6 +47,10 @@ const App = () => {
           toaster.push(message("error", res.message), "bottomCenter");
         }
         setLoading(false);
+      })
+      .catch((erro) => {
+        setLoading(false);
+        toaster.push(message("error", erro.message), "bottomCenter");
       });
   };
 
@@ -62,6 +69,10 @@ const App = () => {
         }
         setLoading(false);
         fetchPersonas();
+      })
+      .catch((erro) => {
+        setLoading(false);
+        toaster.push(message("error", erro.message), "bottomCenter");
       });
   };
 
@@ -97,7 +108,7 @@ const App = () => {
           style={{
             borderRadius: "10px",
           }}
-          width={930}
+          width={width}
           loading={loading}
           locale={{
             emptyMessage: "No hay datos",
@@ -108,23 +119,23 @@ const App = () => {
             <Table.HeaderCell>Id</Table.HeaderCell>
             <Table.Cell dataKey="id" />
           </Table.Column>
-          <Table.Column width={150} align="center" fixed>
+          <Table.Column width={150} align="center">
             <Table.HeaderCell>Nombre</Table.HeaderCell>
             <Table.Cell dataKey="nombre" />
           </Table.Column>
-          <Table.Column width={150} align="center" fixed>
+          <Table.Column width={150} align="center">
             <Table.HeaderCell>Apellido</Table.HeaderCell>
             <Table.Cell dataKey="apellido" />
           </Table.Column>
-          <Table.Column width={100} align="center" fixed>
+          <Table.Column width={100} align="center">
             <Table.HeaderCell>Teléfono</Table.HeaderCell>
             <Table.Cell dataKey="telefono" />
           </Table.Column>
-          <Table.Column width={250} align="center" fixed>
+          <Table.Column width={250} align="center">
             <Table.HeaderCell>Correo Electrónico</Table.HeaderCell>
             <Table.Cell dataKey="email" />
           </Table.Column>
-          <Table.Column width={120} align="center" fixed>
+          <Table.Column width={120} align="center">
             <Table.HeaderCell>Fecha Nacimiento</Table.HeaderCell>
             <Table.Cell dataKey="fNacimiento" />
           </Table.Column>
