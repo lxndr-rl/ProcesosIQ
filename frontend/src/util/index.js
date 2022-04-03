@@ -5,6 +5,6 @@ const setTitle = (title) => {
 const baseURL =
   process.env.NODE_ENV === "development"
     ? "http://localhost:8000/api"
-    : "https://api.lxndr.dev/procesosiq";
+    : "https://api.lxndr.dev/procesosiq/api";
 
 export { setTitle, baseURL };
