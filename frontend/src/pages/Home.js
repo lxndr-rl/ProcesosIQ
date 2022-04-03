@@ -39,9 +39,28 @@ const App = () => {
         if (res.status === "ok") {
           setData(res.data);
         } else {
+          setData([]);
           toaster.push(message("error", res.message), "bottomCenter");
         }
         setLoading(false);
+      });
+  };
+
+  const borrarPersona = (id) => {
+    setLoading(true);
+    fetch(`${baseURL}/personas/${id}/`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === "ok") {
+          fetchPersonas();
+          toaster.push(message("success", res.message), "bottomCenter");
+        } else {
+          toaster.push(message("error", res.message), "bottomCenter");
+        }
+        setLoading(false);
+        fetchPersonas();
       });
   };
 
@@ -122,9 +141,6 @@ const App = () => {
             </Table.HeaderCell>
             <Table.Cell>
               {(rowData) => {
-                function handleAction() {
-                  alert(`BORRAR :${rowData.id}`);
-                }
                 return (
                   <span>
                     <a
@@ -139,7 +155,7 @@ const App = () => {
                       Editar{" "}
                     </a>{" "}
                     |{" "}
-                    <a href="/#" onClick={handleAction}>
+                    <a href="/#" onClick={() => borrarPersona(rowData.id)}>
                       {" "}
                       Borrar{" "}
                     </a>

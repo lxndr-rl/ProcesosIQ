@@ -115,13 +115,13 @@ class PersonasView(View):
         if(id > 0):
             Personas = list(Persona.objects.filter(id=id).values())
             if(len(Personas) > 0):
-                Persona.objects.get(id=id).delete()
-                response = JsonResponse(
-                    {'status': 'ok', 'message': f'{id} eliminado correctamente'}, status=200)
                 Timeline.objects.create(
                     persona=Persona.objects.last(),
                     descripcion=f'Se eliminó la persona con id {id}',
                 )
+                Persona.objects.get(id=id).delete()
+                response = JsonResponse(
+                    {'status': 'ok', 'message': f'{id} eliminado correctamente'}, status=200)
             else:
                 response = JsonResponse(
                     {'status': 'error', 'message': 'No se encontró la persona'}, status=404)
