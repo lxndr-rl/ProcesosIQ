@@ -26,12 +26,6 @@ Dentro de esta hay un archivo llamado `.env.example` el cual se debe renombrar a
 Dentro de la carpeta _backend_ ejecutar el siguiente comando:
 
 ```bash
-python3 manage.py makemigrations
-```
-
-luego
-
-```bash
 python3 manage.py migrate
 ```
 
