@@ -162,7 +162,7 @@ const EditarPersona = ({ id, closeModal, type }) => {
                 />
               </Form.Group>
               <Form.Group controlId="fnacimiento">
-                <Form.ControlLabel>Correo Electrónico</Form.ControlLabel>
+                <Form.ControlLabel>Fecha de Nacimiento</Form.ControlLabel>
                 <Form.Control
                   disabled={saving}
                   name="fnacimiento"
