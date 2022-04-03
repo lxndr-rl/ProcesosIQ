@@ -40,6 +40,7 @@ Error
 ```
 
 </details>
+
 ### Listar Persona por ID
 
     GET /api/personas/<id>/
@@ -77,6 +78,7 @@ Error
 ```
 
 </details>
+
 ### Crear Persona
 
     POST /api/personas/
@@ -112,6 +114,7 @@ Error
 ```
 
 </details>
+
 ### Actualizar Persona
 
     PUT /api/personas/<id>/
@@ -146,6 +149,7 @@ Error
 ```
 
 </details>
+
 ### Eliminar Persona
 
     DELETE /api/personas/<id>/
